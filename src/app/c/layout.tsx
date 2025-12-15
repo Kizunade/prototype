@@ -6,8 +6,8 @@ export default function CLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="pb-16 min-h-screen bg-zinc-50">
-      <main className="flex-1 overflow-y-auto">{children}</main>
+    <div className="pb-16 min-h-screen bg-zinc-50 flex flex-col">
+      <div className="flex-1">{children}</div>
       <CTabBar />
     </div>
   );

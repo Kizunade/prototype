@@ -31,9 +31,7 @@ const formSchema = z.object({
   age: z.string().min(1, {
     message: "年龄为必填项。",
   }),
-  gender: z.string({
-    required_error: "请选择性别。",
-  }),
+  gender: z.string('请选择性别'),
   remarks: z.string().optional(),
 })
 
@@ -57,7 +55,7 @@ export default function PetCreatePage() {
       photo: null, // Mock photo upload
       remarks: values.remarks || "",
     })
-    router.push("/c/service")
+    router.back() // Go back to previous page
   }
 
   return (
@@ -131,7 +129,7 @@ export default function PetCreatePage() {
                   )}
                 />
               </div>
-              
+
               <FormItem>
                 <FormLabel>照片</FormLabel>
                 <FormControl>
@@ -147,17 +145,17 @@ export default function PetCreatePage() {
                   <FormItem>
                     <FormLabel>特殊备注 (选填)</FormLabel>
                     <FormControl>
-                      <Textarea 
-                        placeholder="是否有过敏史、行为习惯等..." 
-                        className="resize-none" 
-                        {...field} 
+                      <Textarea
+                        placeholder="是否有过敏史、行为习惯等..."
+                        className="resize-none"
+                        {...field}
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full">下一步：选择服务</Button>
+              <Button type="submit" className="w-full">保存档案</Button>
             </form>
           </Form>
         </CardContent>

@@ -7,17 +7,15 @@ import { cn } from "@/lib/utils";
 
 export function CTabBar() {
   const pathname = usePathname();
+
+  // Hide TabBar on Sitter Detail Page
+  if (pathname.startsWith('/c/sitter/')) return null;
   
   const tabs = [
     {
       href: "/c/home",
       label: "首页",
       icon: Home,
-    },
-    {
-      href: "/c/pet/create", // Or a central action button
-      label: "预约",
-      icon: PlusCircle,
     },
     {
       href: "/c/profile",

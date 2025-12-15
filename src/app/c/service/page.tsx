@@ -26,15 +26,9 @@ import { cn } from "@/lib/utils"
 import { usePrototype } from "@/lib/prototype-context"
 
 const formSchema = z.object({
-  serviceType: z.enum(["feed", "walk"], {
-    required_error: "请选择服务类型。",
-  }),
-  date: z.date({
-    required_error: "服务日期为必填项。",
-  }),
-  address: z.string().min(5, {
-    message: "地址至少需要5个字符。",
-  }),
+  serviceType: z.enum(["feed", "walk"], "请选择服务类型。"),
+  date: z.date("服务日期为必填项。"),
+  // address removed from schema as requested simplification
 })
 
 export default function ServiceSelectionPage() {
@@ -45,7 +39,6 @@ export default function ServiceSelectionPage() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       serviceType: "walk",
-      address: "",
     },
   })
 
@@ -53,7 +46,7 @@ export default function ServiceSelectionPage() {
     setOrder({
       serviceType: values.serviceType,
       date: values.date,
-      address: values.address,
+      address: "默认地址 (从档案读取)", // Simplification
     })
     router.push("/c/checkout")
   }
@@ -105,7 +98,7 @@ export default function ServiceSelectionPage() {
                   </FormItem>
                 )}
               />
-              
+
               <FormField
                 control={form.control}
                 name="date"
@@ -148,23 +141,8 @@ export default function ServiceSelectionPage() {
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name="address"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>服务地址</FormLabel>
-                    <FormControl>
-                      <Input placeholder="例如：朝阳区建国路88号" {...field} />
-                    </FormControl>
-                    <FormDescription>
-                      请填写宠托师需要上门的详细地址。
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
+              {/* Address field removed */}
+
               <Button type="submit" className="w-full">去支付</Button>
             </form>
           </Form>

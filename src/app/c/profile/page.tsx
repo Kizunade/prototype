@@ -1,9 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LogOut, Settings, CreditCard, Shield } from "lucide-react";
+import { LogOut, FileText, Dog, MessageSquare, AtSign } from "lucide-react";
 import Link from "next/link";
 
 export default function CProfilePage() {
@@ -24,17 +24,25 @@ export default function CProfilePage() {
         <Card>
           <CardContent className="p-0">
             <div className="flex flex-col">
+              <Link href="/c/orders">
+                <Button variant="ghost" className="justify-start w-full h-14 px-6 rounded-none border-b">
+                  <FileText className="mr-2 h-4 w-4" />
+                  查看订单
+                </Button>
+              </Link>
+              <Link href="/c/pets">
+                <Button variant="ghost" className="justify-start w-full h-14 px-6 rounded-none border-b">
+                  <Dog className="mr-2 h-4 w-4" />
+                  我的宠物
+                </Button>
+              </Link>
               <Button variant="ghost" className="justify-start h-14 px-6 rounded-none border-b">
-                <CreditCard className="mr-2 h-4 w-4" />
-                支付方式
-              </Button>
-              <Button variant="ghost" className="justify-start h-14 px-6 rounded-none border-b">
-                <Shield className="mr-2 h-4 w-4" />
-                安全中心
+                <MessageSquare className="mr-2 h-4 w-4" />
+                建议反馈
               </Button>
               <Button variant="ghost" className="justify-start h-14 px-6 rounded-none">
-                <Settings className="mr-2 h-4 w-4" />
-                设置
+                <AtSign className="mr-2 h-4 w-4" />
+                关注公众号
               </Button>
             </div>
           </CardContent>

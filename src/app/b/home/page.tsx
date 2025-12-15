@@ -19,7 +19,7 @@ export default function BHomePage() {
 
       <div className="grid grid-cols-3 gap-4">
         <Card>
-          <CardContent className="flex flex-col items-center justify-center p-4 gap-2">
+          <CardContent className="flex flex-col items-center justify-center gap-2">
             <DollarSign className="h-5 w-5 text-green-600" />
             <div className="text-center">
               <span className="text-xs text-muted-foreground">收入</span>
@@ -28,7 +28,7 @@ export default function BHomePage() {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="flex flex-col items-center justify-center p-4 gap-2">
+          <CardContent className="flex flex-col items-center justify-center gap-2">
             <Star className="h-5 w-5 text-yellow-500" />
             <div className="text-center">
               <span className="text-xs text-muted-foreground">评分</span>
@@ -37,7 +37,7 @@ export default function BHomePage() {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="flex flex-col items-center justify-center p-4 gap-2">
+          <CardContent className="flex flex-col items-center justify-center gap-2">
             <TrendingUp className="h-5 w-5 text-blue-500" />
             <div className="text-center">
               <span className="text-xs text-muted-foreground">订单</span>
@@ -54,7 +54,7 @@ export default function BHomePage() {
         </div>
 
         <Card>
-          <CardContent className="p-4 space-y-4">
+          <CardContent className="space-y-4">
             <div className="flex items-center justify-between border-b pb-4 last:border-0 last:pb-0">
               <div>
                 <p className="font-medium">上门遛狗 - 旺财</p>
@@ -74,7 +74,7 @@ export default function BHomePage() {
                 <p className="font-medium">上门遛狗 - Max</p>
                 <p className="text-xs text-muted-foreground">10月24日, 4:00 PM</p>
               </div>
-               <Badge className="bg-green-100 text-green-800 hover:bg-green-100">已完成</Badge>
+              <Badge className="bg-green-100 text-green-800 hover:bg-green-100">已完成</Badge>
             </div>
           </CardContent>
         </Card>

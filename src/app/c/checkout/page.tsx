@@ -23,7 +23,7 @@ export default function CheckoutPage() {
     // In a real app, this would update backend state. 
     // For prototype, we can redirect to home or an 'order success' page.
     setTimeout(() => {
-      router.push("/")
+      router.push("/c/home")
     }, 1500)
   }
 

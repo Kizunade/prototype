@@ -31,8 +31,8 @@ export namespace AddressModel {
   }).describe('地址列表查询参数');
 
   export const listParamsSchema = z.object({
-    pageNum: z.number().default(1).describe('当前页'),
-    pageSize: z.number().default(10).describe('每页大小'),
+    pageNum: z.string().transform(val => parseInt(val)).default(1).describe('当前页'),
+    pageSize: z.string().transform(val => parseInt(val)).default(10).describe('每页大小'),
   });
 
   // 删除参数
